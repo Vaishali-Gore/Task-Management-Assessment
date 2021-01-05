@@ -1,0 +1,40 @@
+<div class="outer-container" cdkDropListGroup>
+    <div class="create-List">
+        <form [formGroup]="createListForm">
+            <input type="text" placeholder="Enter New List Name" formControlName="name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                <div *ngIf="name.errors.required">
+                    Name is required.
+                </div>
+                <div *ngIf="name.hasError('pattern')">
+                    Enter valid List name.
+                </div>
+            </div>
+        </form>
+        <button class="btn new-list-button" [disabled]="isFormValid()" color="primary" (click)="createnewList()">+Add New List</button>
+    </div>
+
+    <div cdkDropList class="container" [cdkDropListData]="lists" (cdkDropListDropped)="drop($event)">
+        <div cdkDropListGroup class="list-container">
+            <div class="list" *ngFor="let list of lists; let i=index" cdkDrag>
+                <div class="listName">
+                    <p>{{list.name}}</p>
+                </div>
+                <div cdkDropList class="card-container" [cdkDropListData]="lists" (cdkDropListDropped)="drop($event)">
+                    <div class="card" *ngFor="let card of list.cards; let id=index" cdkDrag>
+                        {{card.cardName}}
+
+                        <span (click)="deleteCard(id)"><i class="fa fa-trash"></i></span>
+                        <!--  <span (click)="updateCard(id)"><i class="fa fa-edit"></i></span>-->
+                    </div>
+                    <div class="createCard">
+                        <form [formGroup]="createCardForm">
+                            <input name="newItem" type="text" formControlName="cardName" placeholder="Enter a new item">
+                            <button class="btn new-card-button" (click)="createCard(i)">+Add Card</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

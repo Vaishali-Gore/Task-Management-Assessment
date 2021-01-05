@@ -1,0 +1,28 @@
+@import "./myTheme.scss";
+.container {
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 1rem;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-quaternary);
+    font-size: 1rem;
+}
+
+.nav .title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.themeButton {
+    float: right;
+    height: auto;
+}

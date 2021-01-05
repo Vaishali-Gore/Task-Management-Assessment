@@ -1,0 +1,50 @@
+{
+  "Lists": [
+    {
+      "id": 1,
+      "name": "Todo",
+      "cards": [
+        {
+          "id": 1,
+          "cardName": "Pay Electricity bill"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "In progress",
+      "cards": [
+        {
+          "id": 1,
+          "cardName": "Wash Cloths"
+        },
+        {
+          "id": 2,
+          "cardName": "Iron Cloths"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Done",
+      "cards": [
+        {
+          "id": 1,
+          "cardName": "Buy running shoes"
+        },
+        {
+          "id": 2,
+          "cardName": "Buy running shoes"
+        }
+      ]
+    },
+    {
+      "name": "",
+      "id": 4
+    },
+    {
+      "name": null,
+      "id": 5
+    }
+  ]
+}
